@@ -5,12 +5,13 @@
 
 ![language](https://img.shields.io/badge/Language-%20Swift%20-orange.svg)
 
-[![CI Status](https://img.shields.io/travis/ugurethemaydin/CheckDevice.svg?style=flat)](https://travis-ci.org/ugurethemaydin/CheckDevice)
 [![Version](https://img.shields.io/cocoapods/v/CheckDevice.svg?style=flat)](https://cocoapods.org/pods/CheckDevice)
 [![License](https://img.shields.io/cocoapods/l/CheckDevice.svg?style=flat)](https://cocoapods.org/pods/CheckDevice)
 [![Platform](https://img.shields.io/cocoapods/p/CheckDevice.svg?style=flat)](https://cocoapods.org/pods/CheckDevice)
 
 
+
+[![CI Status](https://img.shields.io/travis/ugurethemaydin/CheckDevice.svg?style=flat)](https://travis-ci.org/ugurethemaydin/CheckDevice)
 
 #### **How to detect iOS device models and screen size?**
 ###### **CheckDevice is detected the current  device model and screen sizes.**
@@ -48,7 +49,7 @@ And then run:  `$ pod install`
 
 ##
 ### Swift Package Manager
-#### The [Swift Package Manager](https://swift.org/package-manager/) automates the distribution of Swift code. To use GRDB with SPM, add a dependency to your `Package.swift` file: 
+#### The [Swift Package Manager](https://swift.org/package-manager/) automates the distribution of Swift code. To use CheckDevice with SPM, add a dependency to your `Package.swift` file: 
 
 
 
