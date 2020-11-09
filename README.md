@@ -261,7 +261,11 @@ func myFunc() {
         
 }
 ```
+#
+## Todo
 
+- iPhone 12 Series will be added immediately.
+#
 ## Author
 
 Uğur Ethem AYDIN, ugur@metromedya.com 
