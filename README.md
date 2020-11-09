@@ -1,6 +1,7 @@
 # CheckDevice✔️
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=How%20to%20detect%20ios%20current%20screen%20size%20or%20device%20type.Just%20use%20this%20repo%20:%20%20%20%20&url=https://github.com/ugurethemaydin/CheckDevice&hashtags=cocoapods,repo,CheckDevice,developers,swift,ios,device,github,deviceDetect)
 
+![CheckDevice](https://github.com/ugurethemaydin/CheckDevice/blob/main/header.jpg)
 
 ![language](https://img.shields.io/badge/Language-%20Swift%20-orange.svg)
 
