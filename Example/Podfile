@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CheckDevice_Example' do
+  pod 'CheckDevice', :path => '../'
+
+  target 'CheckDevice_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

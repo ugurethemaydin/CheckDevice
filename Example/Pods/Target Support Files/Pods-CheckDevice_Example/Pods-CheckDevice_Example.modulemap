@@ -1,0 +1,6 @@
+framework module Pods_CheckDevice_Example {
+  umbrella header "Pods-CheckDevice_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

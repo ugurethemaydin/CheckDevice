@@ -1,0 +1,16 @@
+PODS:
+  - CheckDevice (0.1.0)
+
+DEPENDENCIES:
+  - CheckDevice (from `../`)
+
+EXTERNAL SOURCES:
+  CheckDevice:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CheckDevice: 285dffe3b9f5dc5134eeeb0aaad19428175e1d6d
+
+PODFILE CHECKSUM: aace8ffea575d4df0c1370f975088fcf41b43e90
+
+COCOAPODS: 1.10.0
