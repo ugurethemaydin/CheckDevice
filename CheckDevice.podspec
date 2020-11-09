@@ -29,9 +29,9 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/ugurethemaydin'
 
   s.ios.deployment_target = '10.3'
-
-
-  s.source_files = 'CheckDevice/**/*'
+  s.swift_version = '4.0'
+  s.source           =  { :git => 'https://github.com/ugurethemaydin/CheckDevice.git', :tag => s.version.to_s }
+  s.source_files = 'Sources/CheckDevice/**/*'
   
   # s.resource_bundles = {
   #   'CheckDevice' => ['CheckDevice/Assets/*.png']

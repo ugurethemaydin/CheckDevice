@@ -16,10 +16,10 @@
 		CF392F5DE4E813A284E5106C012456BA /* CheckDevice-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADEC3014FF8FA475879325D358EF0BC5 /* CheckDevice-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DAD60357ABCA7D642497BAB2A0557EF2 /* Pods-CheckDevice_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AD4C6405C94B098E37F66A0E8B1A99 /* Pods-CheckDevice_Tests-dummy.m */; };
 		E5AE0526E57BD5694D6261CA8E909949 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		FC3C326A2559D6B700FDBB87 /* CheckDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3C32692559D6B700FDBB87 /* CheckDevice.swift */; };
-		FC3C32762559D6F900FDBB87 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3C32732559D6F900FDBB87 /* Size.swift */; };
-		FC3C32772559D6F900FDBB87 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3C32742559D6F900FDBB87 /* Version.swift */; };
-		FC3C32782559D6F900FDBB87 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3C32752559D6F900FDBB87 /* Type.swift */; };
+		FC4D68792559DF6500A887D1 /* CheckDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D68752559DF6500A887D1 /* CheckDevice.swift */; };
+		FC4D687A2559DF6500A887D1 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D68762559DF6500A887D1 /* Type.swift */; };
+		FC4D687B2559DF6500A887D1 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D68772559DF6500A887D1 /* Version.swift */; };
+		FC4D687C2559DF6500A887D1 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D68782559DF6500A887D1 /* Size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,10 +72,10 @@
 		EFBA65A809B9FD681837EE0AA85068C6 /* CheckDevice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckDevice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D99CF3C11487A9D5143AB9D66D0740 /* Pods-CheckDevice_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CheckDevice_Example.modulemap"; sourceTree = "<group>"; };
 		F7C3E4E684CE7E5AF2EC0DCB425736BF /* Pods_CheckDevice_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckDevice_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC3C32692559D6B700FDBB87 /* CheckDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckDevice.swift; sourceTree = "<group>"; };
-		FC3C32732559D6F900FDBB87 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
-		FC3C32742559D6F900FDBB87 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
-		FC3C32752559D6F900FDBB87 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		FC4D68752559DF6500A887D1 /* CheckDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckDevice.swift; sourceTree = "<group>"; };
+		FC4D68762559DF6500A887D1 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		FC4D68772559DF6500A887D1 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		FC4D68782559DF6500A887D1 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 		3102092F44AFD05A7C9E40F570ADC07F /* CheckDevice */ = {
 			isa = PBXGroup;
 			children = (
-				FC3C32682559D6B700FDBB87 /* CheckDevice */,
+				FC4D68732559DF6500A887D1 /* Sources */,
 				682B80A01465F26C5BC61C84AC6308B6 /* Pod */,
 				C5079254CC6E718EC0CD465BF2E20089 /* Support Files */,
 			);
@@ -229,16 +229,23 @@
 			path = "Target Support Files/Pods-CheckDevice_Tests";
 			sourceTree = "<group>";
 		};
-		FC3C32682559D6B700FDBB87 /* CheckDevice */ = {
+		FC4D68732559DF6500A887D1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FC3C32732559D6F900FDBB87 /* Size.swift */,
-				FC3C32752559D6F900FDBB87 /* Type.swift */,
-				FC3C32742559D6F900FDBB87 /* Version.swift */,
-				FC3C32692559D6B700FDBB87 /* CheckDevice.swift */,
+				FC4D68742559DF6500A887D1 /* CheckDevice */,
 			);
-			name = CheckDevice;
-			path = ../Sources/CheckDevice;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FC4D68742559DF6500A887D1 /* CheckDevice */ = {
+			isa = PBXGroup;
+			children = (
+				FC4D68752559DF6500A887D1 /* CheckDevice.swift */,
+				FC4D68762559DF6500A887D1 /* Type.swift */,
+				FC4D68772559DF6500A887D1 /* Version.swift */,
+				FC4D68782559DF6500A887D1 /* Size.swift */,
+			);
+			path = CheckDevice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,11 +400,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC3C32782559D6F900FDBB87 /* Type.swift in Sources */,
-				FC3C326A2559D6B700FDBB87 /* CheckDevice.swift in Sources */,
-				FC3C32762559D6F900FDBB87 /* Size.swift in Sources */,
-				FC3C32772559D6F900FDBB87 /* Version.swift in Sources */,
+				FC4D68792559DF6500A887D1 /* CheckDevice.swift in Sources */,
+				FC4D687C2559DF6500A887D1 /* Size.swift in Sources */,
 				2488B8C2324AAA9CEEB5574E4D339AE5 /* CheckDevice-dummy.m in Sources */,
+				FC4D687B2559DF6500A887D1 /* Version.swift in Sources */,
+				FC4D687A2559DF6500A887D1 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
