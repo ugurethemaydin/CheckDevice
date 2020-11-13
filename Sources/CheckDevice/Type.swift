@@ -22,5 +22,6 @@ public enum Type: String {
     case macBookPro
     case xserve
     #endif
+    case Watch
     case unknown
 }
