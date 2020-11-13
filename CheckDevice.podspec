@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CheckDevice'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'CheckDevice is detected the current  device model and screen sizes.'
 
 # This description is used to generate tags and improve search results.
