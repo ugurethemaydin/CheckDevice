@@ -20,6 +20,7 @@
 		FC4D687A2559DF6500A887D1 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D68762559DF6500A887D1 /* Type.swift */; };
 		FC4D687B2559DF6500A887D1 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D68772559DF6500A887D1 /* Version.swift */; };
 		FC4D687C2559DF6500A887D1 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4D68782559DF6500A887D1 /* Size.swift */; };
+		FCFCD69D2565B9B000B3FFAD /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFCD69C2565B9B000B3FFAD /* Battery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		FC4D68762559DF6500A887D1 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		FC4D68772559DF6500A887D1 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		FC4D68782559DF6500A887D1 /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		FCFCD69C2565B9B000B3FFAD /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				FC4D68752559DF6500A887D1 /* CheckDevice.swift */,
 				FC4D68762559DF6500A887D1 /* Type.swift */,
 				FC4D68772559DF6500A887D1 /* Version.swift */,
+				FCFCD69C2565B9B000B3FFAD /* Battery.swift */,
 				FC4D68782559DF6500A887D1 /* Size.swift */,
 			);
 			path = CheckDevice;
@@ -403,6 +406,7 @@
 				FC4D68792559DF6500A887D1 /* CheckDevice.swift in Sources */,
 				FC4D687C2559DF6500A887D1 /* Size.swift in Sources */,
 				2488B8C2324AAA9CEEB5574E4D339AE5 /* CheckDevice-dummy.m in Sources */,
+				FCFCD69D2565B9B000B3FFAD /* Battery.swift in Sources */,
 				FC4D687B2559DF6500A887D1 /* Version.swift in Sources */,
 				FC4D687A2559DF6500A887D1 /* Type.swift in Sources */,
 			);
