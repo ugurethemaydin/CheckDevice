@@ -5,7 +5,7 @@
 //  Created by Uğur Ethem AYDIN on 18.11.2020.
 //
 
-import Foundation
+import UIKit
 
 public struct Battery {
         /// Return battery state
