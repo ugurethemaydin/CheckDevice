@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         device.text = CheckDevice.version().rawValue
         battery.text = String(CheckDevice.battery.level)
         dump(CheckDevice.version().rawValue)
+        dump(CheckDevice.size())
         // Do any additional setup after loading the view, typically from a nib.
     }
 
