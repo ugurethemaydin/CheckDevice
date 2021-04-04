@@ -165,7 +165,7 @@ open class CheckDevice {
             return .screen5_4Inch
         case 812:
             if #available(iOS 11.0, *) {
-                return UIApplication.shared.windows[0].safeAreaLayoutGuide.layoutFrame.minY != 44 ?  .screen5_4Inch : .screen5_8Inch
+                return UIApplication.shared.windows.first?.safeAreaLayoutGuide.layoutFrame.minY != 44 ?  .screen5_4Inch : .screen5_8Inch
             } else {
                 return .screen5_8Inch
             }
