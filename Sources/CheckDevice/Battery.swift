@@ -88,21 +88,21 @@ public class Battery {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(batteryStateDidChange),
-            name: .UIDeviceBatteryStateDidChange,
+            name: UIDevice.batteryStateDidChangeNotification,
             object: nil
         )
 
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(batteryLevelDidChange),
-            name: .UIDeviceBatteryLevelDidChange,
+            name: UIDevice.batteryLevelDidChangeNotification,
             object: nil
         )
 
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(powerModeDidChange),
-            name: .NSProcessInfoPowerStateDidChange,
+            name: Notification.Name.NSProcessInfoPowerStateDidChange,
             object: nil
         )
     }

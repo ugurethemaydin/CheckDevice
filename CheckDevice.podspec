@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CheckDevice'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'Detect Apple device models, screen sizes, and capabilities.'
 
   s.description      = <<-DESC
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/ugurethemaydin'
 
   s.ios.deployment_target = '10.3'
-  s.swift_version = '4.0'
+  s.swift_version = '4.2'
   s.source_files = 'Sources/CheckDevice/**/*'
 
   s.frameworks = 'UIKit'
