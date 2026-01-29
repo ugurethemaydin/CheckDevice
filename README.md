@@ -203,6 +203,37 @@ func myFunc() {
 }
 ```
 
+## Mac
+
+### Mac Version
+```swift
+func myFunc() {
+    switch CheckDevice.type() {
+        case .iMac:         print("It's an iMac")
+        case .macBook:      print("It's a MacBook")
+        case .macBookAir:   print("It's a MacBook Air")
+        case .macBookPro:   print("It's a MacBook Pro")
+        default:            print("Unknown device type")
+    }
+}
+```
+
+### Mac Screen Size
+```swift
+func myFunc() {
+    switch CheckDevice.size() {
+        case .screen11Inch:     print("It's a 11 inch screen")
+        case .screen12Inch:     print("It's a 12 inch screen")
+        case .screen13Inch:     print("It's a 13 inch screen")
+        case .screen15Inch:     print("It's a 15 inch screen")
+        case .screen17Inch:     print("It's a 17 inch screen")
+        case .screen21_5Inch:   print("It's a 21.5 inch screen")
+        case .screen27Inch:     print("It's a 27 inch screen")
+        default:                print("Unknown size")
+    }
+}
+```
+
 ## Author
 
 Uğur Ethem AYDIN, ugur@metromedya.com
