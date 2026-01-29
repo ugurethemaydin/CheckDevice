@@ -1,311 +1,211 @@
-# CheckDevice✔️
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=How%20to%20detect%20ios%20current%20screen%20size%20or%20device%20type.Just%20use%20this%20repo%20:%20%20%20%20&url=https://github.com/ugurethemaydin/CheckDevice&hashtags=cocoapods,repo,CheckDevice,developers,swift,ios,device,github,deviceDetect)
+# CheckDevice
 
 ![CheckDevice](https://github.com/ugurethemaydin/CheckDevice/blob/main/header.jpg)
 
 ![language](https://img.shields.io/badge/Language-%20Swift%20-orange.svg)
-
 [![Version](https://img.shields.io/cocoapods/v/CheckDevice.svg?style=flat)](https://cocoapods.org/pods/CheckDevice)
 [![License](https://img.shields.io/cocoapods/l/CheckDevice.svg?style=flat)](https://cocoapods.org/pods/CheckDevice)
 [![Platform](https://img.shields.io/cocoapods/p/CheckDevice.svg?style=flat)](https://cocoapods.org/pods/CheckDevice)
 
-
-
-[![CI Status](https://img.shields.io/travis/ugurethemaydin/CheckDevice.svg?style=flat)](https://travis-ci.org/ugurethemaydin/CheckDevice)
-
 #### **How to detect iOS device models and screen size?**
-###### **CheckDevice is detected the current  device model and screen sizes.**
+###### **CheckDevice detects the current Apple device model and screen sizes.**
 
+Supports all Apple devices from iPhone Original (2007) to iPhone 17 series (2025).
+
+## Swift Package Manager (Recommended)
+
+The Swift Package Manager is the preferred way to add CheckDevice:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/ugurethemaydin/CheckDevice.git", from: "2.0.0")
+]
+```
+
+Or add it via Xcode: File → Add Package Dependencies → Enter the repository URL.
+
+## CocoaPods
+
+> **Note:** CocoaPods will become read-only on December 2, 2026. We recommend migrating to Swift Package Manager for future updates.
+
+```ruby
+pod 'CheckDevice', '~> 2.0'
+```
+
+Then run: `$ pod install`
+
+## Usage
+
+### Device Screen Size
 ```swift
 CheckDevice.size()
 ```
 
-
-## Simplify and justify
-
-You can also use
-
+### Device Version
 ```swift
-CheckDevice.isPhone() 
+CheckDevice.version()
 ```
 
-to check the device type iPhone.
-
-
-
-
-## CocoaPods or Swift Package Manager (SPM) 
-
-**CheckDevice** is support cocoaPods and SPM.
-##
-###  CocoaPods
- [CocoaPods](http://cocoapods.org/) is a dependency manager for Xcode projects. To use CheckDevice with CocoaPods simply add the following lines to your PodFile:
-
+### Device Type
 ```swift
-pod 'CheckDevice'
+CheckDevice.isPhone()
+CheckDevice.isPad()
+CheckDevice.isPod()
+CheckDevice.isWatch()
+CheckDevice.isSimulator()
 ```
 
-And then run:  `$ pod install`
-
-##
-### Swift Package Manager
-#### The [Swift Package Manager](https://swift.org/package-manager/) automates the distribution of Swift code. To use CheckDevice with SPM, add a dependency to your `Package.swift` file: 
-
-
-
+### Device Capabilities
 ```swift
-let package = Package(
-    dependencies: [
-        .package(url: "https://github.com/ugurethemaydin/CheckDevice.git", ...)
-    ]
-)
+CheckDevice.hasFaceID      // Face ID support
+CheckDevice.hasTouchID     // Touch ID support
+CheckDevice.hasModernDesign // Notch/Dynamic Island design
+CheckDevice.isRetina()     // Retina display
 ```
 
-
-#
-### Carthage
-
-###### [Carthage](https://github.com/Carthage/Carthage) is unsupported. 
-
-
-
-#
-### Usage
-
-Detect a current device and write log:
-
+### Comprehensive Device Info
 ```swift
-CheckDevice.current()
+let info = CheckDevice.deviceInfo()
+print(info.model)           // "iPhone17,1"
+print(info.screenSize)      // screen6_3Inch
+print(info.hasFaceID)       // true
+print(info.totalMemory)     // Memory in bytes
 ```
+
+## Supported Devices
+
+### iPhones (2007-2026)
+- iPhone Original through iPhone 17 series
+- iPhone SE (all generations)
+
+### iPads
+- iPad 1 through iPad 11
+- iPad Air (all generations including M3)
+- iPad Mini (all generations)
+- iPad Pro (all generations including 2025 models)
+
+### Apple Watch
+- Apple Watch Original through Series 11
+- Apple Watch SE (all generations)
+- Apple Watch Ultra (all generations)
+
+### Screen Sizes
+
+| Size | Points | Devices |
+|------|--------|---------|
+| screen3_5Inch | 480 | iPhone 4/4S |
+| screen4Inch | 568 | iPhone 5/5S/SE |
+| screen4_7Inch | 667 | iPhone 6/7/8, SE2/SE3 |
+| screen5_4Inch | 780 | iPhone 12/13 Mini |
+| screen5_5Inch | 736 | iPhone 6+/7+/8+ |
+| screen5_8Inch | 812 | iPhone X, XS, 11 Pro |
+| screen6_1Inch | 844/852 | iPhone 12/13/14/15/16 |
+| screen6_3Inch | 874 | iPhone 16 Pro, 17 Pro |
+| screen6_5Inch | 896 | iPhone XS Max, 11 Pro Max |
+| screen6_7Inch | 926/932 | iPhone 12-15 Pro Max, 14-16 Plus |
+| screen6_9Inch | 956 | iPhone 16/17 Pro Max |
 
 ## iOS
-### Device version
+
+### Device Version Example
 ```swift
 func myFunc() {
-        /*** Display the device version ***/
-        switch CheckDevice.version() {
-            /*** iPhone ***/
-            case .iPhone4:              print("It's an iPhone 4")
-            case .iPhone4S:             print("It's an iPhone 4S")
-            case .iPhone5:              print("It's an iPhone 5")
-            case .iPhone5C:             print("It's an iPhone 5C")
-            case .iPhone5S:             print("It's an iPhone 5S")
-            case .iPhone6:              print("It's an iPhone 6")
-            case .iPhone6S:             print("It's an iPhone 6S")
-            case .iPhone6Plus:          print("It's an iPhone 6 Plus")
-            case .iPhone6SPlus:         print("It's an iPhone 6 S Plus")
-            case .iPhoneSE:             print("It's an iPhone SE")
-            case .iPhone7:              print("It's an iPhone 7")
-            case .iPhone7Plus:          print("It's an iPhone 7 Plus")
-            case .iPhone8:              print("It's an iPhone 8")
-            case .iPhone8Plus:          print("It's an iPhone 8 Plus")
-            case .iPhoneX:              print("It's an iPhone X")
-            case .iPhoneXS:             print("It's an iPhone Xs")
-            case .iPhoneXS_Max:         print("It's an iPhone Xs Max")
-            case .iPhoneXR:             print("It's an iPhone Xr")
-            case .iPhone11:             print("It's an iPhone 11")            
-            case .iPhone11Pro:          print("It's an iPhone 11")                        
-            case .iPhone11Pro_Max:      print("It's an iPhone 11 Pro Max")                        
-            case .iPhone11Pro_Max:      print("It's an iPhone 11 Pro Max")                                    
-            case .iPhoneSE2:            print("It's an iPhone SE 2 Gen")                                                
-            case .iPhone12Mini:         print("It's an iPhone 12 Mini")                                                            
-            case .iPhone12:             print("It's an iPhone 12")                                                                        
-            case .iPhone12Pro:          print("It's an iPhone 12 Pro")                                                                                    
-            case .iPhone12ProMax:       print("It's an iPhone 12 Pro Max")                                                                                                
-        
+    switch CheckDevice.version() {
+        /*** iPhone ***/
+        case .iPhoneOriginal:   print("It's an iPhone Original")
+        case .iPhone4:          print("It's an iPhone 4")
+        case .iPhoneX:          print("It's an iPhone X")
+        case .iPhone14Pro:      print("It's an iPhone 14 Pro")
+        case .iPhone15:         print("It's an iPhone 15")
+        case .iPhone16Pro:      print("It's an iPhone 16 Pro")
+        case .iPhone16ProMax:   print("It's an iPhone 16 Pro Max")
+        case .iPhone17:         print("It's an iPhone 17")
 
-            /*** iPad ***/
-            case .iPad1:           print("It's an iPad 1")
-            case .iPad2:           print("It's an iPad 2")
-            case .iPad3:           print("It's an iPad 3")
-            case .iPad4:           print("It's an iPad 4")
-            case .iPad5:           print("It's an iPad 5")
-            case .iPad6:           print("It's an iPad 6")
-            case .iPad7:           print("It's an iPad 7")            
-            
-            /*** iPadAir ***/
-            case .iPadAir:         print("It's an iPad Air")
-            case .iPadAir2:        print("It's an iPad Air 2")
-            
-            
-            /*** iPadMini ***/
-            case .iPadMini:        print("It's an iPad Mini")
-            case .iPadMini2:       print("It's an iPad Mini 2")
-            case .iPadMini3:       print("It's an iPad Mini 3")
-            case .iPadMini4:       print("It's an iPad Mini 4")
-            
-            
-            /*** iPadPro ***/
-            case .iPadPro9_7Inch:  print("It's an iPad Pro 9.7 Inch")
-            case .iPadPro10_5Inch: print("It's an iPad Pro 10.5 Inch")
-            case .iPadPro12_9Inch: print("It's an iPad Pro 12.9 Inch")
+        /*** iPad ***/
+        case .iPad1:            print("It's an iPad 1")
+        case .iPadPro11_0Inch:  print("It's an iPad Pro 11")
+        case .iPadAir5:         print("It's an iPad Air 5")
 
-            /*** iPod ***/
-            case .iPodTouch1Gen: print("It's a iPod touch generation 1")
-            case .iPodTouch2Gen: print("It's a iPod touch generation 2")
-            case .iPodTouch3Gen: print("It's a iPod touch generation 3")
-            case .iPodTouch4Gen: print("It's a iPod touch generation 4")
-            case .iPodTouch5Gen: print("It's a iPod touch generation 5")
-            case .iPodTouch6Gen: print("It's a iPod touch generation 6")
-            case .iPodTouch7Gen: print("It's a iPod touch generation 7")            
-            
-            
-            /*** Watch ***/
-            case .WatchOriginal38mm: print("It's a Apple Watch Original 38MM")            
-            case .WatchOriginal42mm: print("It's a Apple Watch Original 42MM")                        
-            
-            /*** All watch alternative included... Some examples ***/
-            case .Watch1Gen38mm: print("It's a Apple Watch 1 38MM")                                    
-            case .Watch2Gen42mm: print("It's a Apple Watch 2 42MM")                                                
-            case .Watch4Gen40mm: print("It's a Apple Watch 4 38MM")                                                            
-            case .Watch6Gen40mm: print("It's a Apple Watch 6 40MM")        
-            case .WatchSE44mm: print("It's a Apple Watch SE 44MM")                                                                                    
-           
-           
-           
-            /*** Simulator ***/
-            case .Simulator:    print("It's a Simulator")
+        /*** iPod ***/
+        case .iPodTouch7Gen:    print("It's an iPod Touch 7")
 
-            /*** Unknown ***/
-            default:            print("It's an unknown device")
-        }
+        /*** Watch ***/
+        case .Watch10Gen46mm:   print("It's an Apple Watch Series 10")
+        case .WatchUltra3Gen49mm: print("It's an Apple Watch Ultra 3")
+
+        /*** Simulator ***/
+        case .simulator:        print("It's a Simulator")
+
+        /*** Unknown ***/
+        default:                print("It's an unknown device")
     }
-```
-
-## Device screen size
-```swift
-func myFunc() {
-        /*** Display the device screen size ***/
-        switch CheckDevice.size() {
-            case .screen3_5Inch:  print("It's a 3.5 inch screen")
-            case .screen4Inch:    print("It's a 4 inch screen")
-            case .screen4_7Inch:  print("It's a 4.7 inch screen")
-            case .screen5_4Inch:  print("It's a 5.4 inch screen")            
-            case .screen5_5Inch:  print("It's a 5.5 inch screen")
-            case .screen5_8Inch:  print("It's a 5.8 inch screen")
-            case .screen6_1Inch:  print("It's a 6.1 inch screen")
-            case .screen6_5Inch:  print("It's a 6.5 inch screen")
-            case .screen6_7Inch:  print("It's a 6.7 inch screen")            
-            case .screen7_9Inch:  print("It's a 7.9 inch screen")
-            case .screen9_7Inch:  print("It's a 9.7 inch screen")
-            case .screen10_5Inch: print("It's a 10.5 inch screen")
-            case .screen12_9Inch: print("It's a 12.9 inch screen")
-            default:              print("Unknown size")
-        }
 }
 ```
 
-## Device type
+### Device Screen Size Example
 ```swift
 func myFunc() {
-        /*** Display the device type ***/
-        switch CheckDevice.type() {
-            case .iPod:         print("It's an iPod")
-            case .iPhone:       print("It's an iPhone")
-            case .iPad:         print("It's an iPad")
-            case .Watch:         print("It's an Apple Watch")            
-            case .Simulator:    print("It's a Simulated device")
-            default:            print("Unknown device type")
-        }
-}
-
-```
-
-or 
-
-```swift
-func myFunc() {
-        /*** Display the device type ***/
-        if (CheckDevice.isPad()){
-            print("It's an iPad")
-        }
-        else if (CheckDevice.isPhone()){
-            print("It's an iPhone")
-        }
-        else if (CheckDevice.isPod()){
-            print("It's an iPod")
-        }
-        else if (CheckDevice.isWatch()){
-            print("It's an Apple Watch")
-        }
-        else if (CheckDevice.isSimulator()){
-            print("It's a Simulated device")
-        }
-}
-
-```
-
-## Mac
-### Mac version
-```swift
-func myFunc() {
-        /*** Display the mac version ***/
-        switch CheckDevice.type() {
-            case .iMac:         print("It's an iMac")
-            case .macBook:      print("It's a MacBook")
-            case .macBookAir:   print("It's a MacBook Air")
-            case .macBookPro:   print("It's a MacBook Pro")
-            default:            print("Unknown device type")
-        }
+    switch CheckDevice.size() {
+        case .screen3_5Inch:  print("It's a 3.5 inch screen")
+        case .screen4Inch:    print("It's a 4 inch screen")
+        case .screen4_7Inch:  print("It's a 4.7 inch screen")
+        case .screen5_4Inch:  print("It's a 5.4 inch screen")
+        case .screen5_5Inch:  print("It's a 5.5 inch screen")
+        case .screen5_8Inch:  print("It's a 5.8 inch screen")
+        case .screen6_1Inch:  print("It's a 6.1 inch screen")
+        case .screen6_3Inch:  print("It's a 6.3 inch screen")
+        case .screen6_5Inch:  print("It's a 6.5 inch screen")
+        case .screen6_7Inch:  print("It's a 6.7 inch screen")
+        case .screen6_9Inch:  print("It's a 6.9 inch screen")
+        case .screen7_9Inch:  print("It's a 7.9 inch screen")
+        case .screen9_7Inch:  print("It's a 9.7 inch screen")
+        case .screen10_5Inch: print("It's a 10.5 inch screen")
+        case .screen11Inch:   print("It's an 11 inch screen")
+        case .screen12_9Inch: print("It's a 12.9 inch screen")
+        case .screen13Inch:   print("It's a 13 inch screen")
+        default:              print("Unknown size")
     }
-```
-
-## Mac screen size
-```swift
-func myFunc() {
-        /*** Display the mac screen size ***/
-        switch CheckDevice.size() {
-            case .screen11Inch:     print("It's a 11 inch screen")
-            case .screen12Inch:     print("It's a 12 inch screen")
-            case .screen13Inch:     print("It's a 13 inch screen")
-            case .screen15Inch:     print("It's a 15 inch screen")
-            case .screen17Inch:     print("It's a 17 inch screen")
-            case .screen21_5Inch:   print("It's a 21.5 inch screen")
-            case .screen27Inch:     print("It's a 27 inch screen")
-            default:                print("Unknown size")
-        }
 }
 ```
 
-## Helpers
+### Device Type Example
 ```swift
 func myFunc() {
-        /*** Helpers ***/
-        if CheckDevice.size() == Size.screen4Inch {
-            print("It's a 4 inch screen")
-        }
-
-        if CheckDevice.size() > Size.screen4_7Inch {
-            print("Your device screen is larger than 4.7 inch")
-        }
-
-        if CheckDevice.size() < Size.screen4_7Inch {
-            print("Your device screen is smaller than 4.7 inch")
-        }
-
-        if CheckDevice.size() == Size.screen27Inch {
-            print("It's a 27 inch screen")
-        }
-        
-        if CheckDevice.size() > Size.screen15Inch {
-            print("Your mac screen is larger than 15 inch")
-        }
-        
-        if CheckDevice.size() < Size.screen15Inch {
-            print("Your mac screen is smaller than 15 inch")
-        }
-
-        if CheckDevice.isRetina() {
-            print("It's a retina display")
-        }
-        
+    switch CheckDevice.type() {
+        case .iPod:      print("It's an iPod")
+        case .iPhone:    print("It's an iPhone")
+        case .iPad:      print("It's an iPad")
+        case .Watch:     print("It's an Apple Watch")
+        case .simulator: print("It's a Simulated device")
+        default:         print("Unknown device type")
+    }
 }
 ```
 
-#
+### Helpers
+```swift
+func myFunc() {
+    if CheckDevice.size() == Size.screen4Inch {
+        print("It's a 4 inch screen")
+    }
+
+    if CheckDevice.size() > Size.screen4_7Inch {
+        print("Your device screen is larger than 4.7 inch")
+    }
+
+    if CheckDevice.size() < Size.screen4_7Inch {
+        print("Your device screen is smaller than 4.7 inch")
+    }
+
+    if CheckDevice.isRetina() {
+        print("It's a retina display")
+    }
+}
+```
+
 ## Author
 
-Uğur Ethem AYDIN, ugur@metromedya.com 
+Uğur Ethem AYDIN, ugur@metromedya.com
 [@ugurethemaydin](http://twitter.com/ugurethemaydin)
 
 ## License

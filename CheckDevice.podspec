@@ -8,21 +8,15 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CheckDevice'
-  s.version          = '1.0.5'
-  s.summary          = 'CheckDevice is detected the current  device model and screen sizes.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.version          = '2.0.0'
+  s.summary          = 'Detect Apple device models, screen sizes, and capabilities.'
 
   s.description      = <<-DESC
-  How to detect iOS device models and screen size? CheckDevice is detected the current apple device model and screen sizes.
+  How to detect iOS device models and screen size? CheckDevice detects the current Apple device model and screen sizes.
+  Supports all devices from iPhone Original (2007) to iPhone 17 (2025), all iPads, Apple Watch, and iPod Touch.
                        DESC
 
   s.homepage         = 'https://github.com/ugurethemaydin/CheckDevice'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ugurethemaydin' => 'ugur@metromedya.com' }
   s.source           = { :git => 'https://github.com/ugurethemaydin/CheckDevice.git', :tag => s.version.to_s }
@@ -30,14 +24,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.3'
   s.swift_version = '4.0'
-  s.source           =  { :git => 'https://github.com/ugurethemaydin/CheckDevice.git', :tag => s.version.to_s }
   s.source_files = 'Sources/CheckDevice/**/*'
-  
-  # s.resource_bundles = {
-  #   'CheckDevice' => ['CheckDevice/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-   s.frameworks = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
