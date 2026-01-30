@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CheckDevice'
-  s.version          = '2.0.1'
+  s.version          = '2.0.2'
   s.summary          = 'Detect Apple device models, screen sizes, and capabilities.'
 
   s.description      = <<-DESC

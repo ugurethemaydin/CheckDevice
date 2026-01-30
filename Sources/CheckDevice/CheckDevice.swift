@@ -116,6 +116,7 @@ open class CheckDevice {
             case "iPhone18,1":                                      return .iPhone17Pro
             case "iPhone18,2":                                      return .iPhone17ProMax
             case "iPhone18,3":                                      return .iPhone17
+            case "iPhone18,4":                                      return .iPhoneAir
 
             /*** iPad ***/
 			case "iPad1,1", "iPad1,2":                              return .iPad1
@@ -274,7 +275,7 @@ open class CheckDevice {
                  .iPhone14, .iPhone14Plus, .iPhone14Pro, .iPhone14ProMax,
                  .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax,
                  .iPhone16, .iPhone16Plus, .iPhone16Pro, .iPhone16ProMax, .iPhone16e,
-                 .iPhone17, .iPhone17Pro, .iPhone17ProMax:
+                 .iPhone17, .iPhone17Pro, .iPhone17ProMax, .iPhoneAir:
                 return true
             default:
                 return false
@@ -346,6 +347,8 @@ open class CheckDevice {
                 return .screen6_3Inch
             case 896:
 				return UIScreen.main.scale == 3.0 ? .screen6_5Inch : .screen6_1Inch
+            case 912:
+                return .screen6_5Inch  // iPhone Air
 			case 926:
 				return .screen6_7Inch
             case 932:
