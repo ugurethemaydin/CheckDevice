@@ -108,7 +108,7 @@ print(info.totalMemory)     // Memory in bytes
 
 ### Screen Corner Radius
 
-Returns the screen corner radius in points for each device model. Useful for matching UI elements (sheets, modals) to the device's physical screen corners.
+Each device has a different physical screen corner radius. This property returns the screen's outer corner radius in points, so you can align UI elements (sheets, modals, bottom bars) with the device's actual screen edges. Since Apple does not provide a public API for this, values are based on known device specifications.
 
 ```swift
 let radius = CheckDevice.screenCornerRadius // e.g. 55.0 on iPhone 15
