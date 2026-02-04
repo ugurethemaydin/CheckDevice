@@ -65,7 +65,7 @@ open class CheckDevice {
 			 //old version
 			case "iPhone1,1":                                       return .iPhoneOriginal
 			case "iPhone1,2":                                       return .iPhone3G
-            case "iPhone2,1":                                       return .iPhone3G
+            case "iPhone2,1":                                       return .iPhone3GS
 			case "iPhone3,1", "iPhone3,2", "iPhone3,3":             return .iPhone4
 			case "iPhone4,1", "iPhone4,2", "iPhone4,3":             return .iPhone4S
 			case "iPhone5,1", "iPhone5,2":                          return .iPhone5
@@ -340,7 +340,7 @@ open class CheckDevice {
         switch version() {
 
         // Eski köşeli ekranlar (Home button'lu)
-        case .iPhoneOriginal, .iPhone3G, .iPhone4, .iPhone4S,
+        case .iPhoneOriginal, .iPhone3G, .iPhone3GS, .iPhone4, .iPhone4S,
              .iPhone5, .iPhone5C, .iPhone5S, .iPhoneSE,
              .iPhone6, .iPhone6Plus, .iPhone6S, .iPhone6SPlus,
              .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus,

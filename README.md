@@ -134,6 +134,8 @@ func myFunc() {
     switch CheckDevice.version() {
         /*** iPhone ***/
         case .iPhoneOriginal:   print("It's an iPhone Original")
+        case .iPhone3G:         print("It's an iPhone 3G")
+        case .iPhone3GS:        print("It's an iPhone 3GS")
         case .iPhone4:          print("It's an iPhone 4")
         case .iPhoneX:          print("It's an iPhone X")
         case .iPhone14Pro:      print("It's an iPhone 14 Pro")

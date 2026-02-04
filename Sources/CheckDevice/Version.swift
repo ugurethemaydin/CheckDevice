@@ -11,6 +11,7 @@ public enum Version : String {
 	/*** iPhone ***/
 	case iPhoneOriginal
 	case iPhone3G
+	case iPhone3GS
 	case iPhone4
 	case iPhone4S
 	case iPhone5
