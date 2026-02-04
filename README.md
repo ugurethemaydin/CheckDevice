@@ -57,10 +57,11 @@ CheckDevice.isSimulator()
 
 ### Device Capabilities
 ```swift
-CheckDevice.hasFaceID      // Face ID support
-CheckDevice.hasTouchID     // Touch ID support
-CheckDevice.hasModernDesign // Notch/Dynamic Island design
-CheckDevice.isRetina()     // Retina display
+CheckDevice.hasFaceID           // Face ID support
+CheckDevice.hasTouchID          // Touch ID support
+CheckDevice.hasModernDesign     // Notch/Dynamic Island design
+CheckDevice.isRetina()          // Retina display
+CheckDevice.screenCornerRadius  // Screen corner radius in points (CGFloat)
 ```
 
 ### Comprehensive Device Info
@@ -104,6 +105,26 @@ print(info.totalMemory)     // Memory in bytes
 | screen6_5Inch | 896 | iPhone XS Max, 11 Pro Max |
 | screen6_7Inch | 926/932 | iPhone 12-15 Pro Max, 14-16 Plus |
 | screen6_9Inch | 956 | iPhone 16/17 Pro Max |
+
+### Screen Corner Radius
+
+Returns the screen corner radius in points for each device model. Useful for matching UI elements (sheets, modals) to the device's physical screen corners.
+
+```swift
+let radius = CheckDevice.screenCornerRadius // e.g. 55.0 on iPhone 15
+```
+
+| Radius (pts) | Devices |
+|-------------|---------|
+| 0 | iPhone 4/4S, 5/5S/SE, 6/7/8 series, SE2/SE3 |
+| 39.0 | iPhone X, XS, XS Max, 11 Pro, 11 Pro Max |
+| 41.5 | iPhone XR, 11 |
+| 44.0 | iPhone 12 mini, 13 mini |
+| 47.33 | iPhone 12, 12 Pro, 13, 13 Pro, 14, 16e |
+| 53.33 | iPhone 12 Pro Max, 13 Pro Max, 14 Plus |
+| 55.0 | iPhone 14 Pro, 14 Pro Max, 15 series, 16, 16 Plus |
+| 62.0 | iPhone 16 Pro, 16 Pro Max, 17 series, Air |
+| 18.0 | iPad Air, iPad Pro |
 
 ## iOS
 
