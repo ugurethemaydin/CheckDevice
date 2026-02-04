@@ -337,7 +337,22 @@ open class CheckDevice {
     /// - iPhone 16 Pro, 16 Pro Max, 17, 17 Pro, 17 Pro Max, Air: 62.0
     /// - iPad Air / iPad Pro 11" / 12.9": 18.0
     static public var screenCornerRadius: CGFloat {
-        switch version() {
+        var deviceVersion = version()
+
+        // Simulator'da gerçek simüle edilen cihaz modelini kullan
+        if deviceVersion == .simulator,
+           let simID = ProcessInfo.processInfo.environment["SIMULATOR_MODEL_IDENTIFIER"] {
+            let simVersion = getVersion(code: simID)
+            if simVersion != .simulator && simVersion != .unknown {
+                deviceVersion = simVersion
+            }
+        }
+
+        return screenCornerRadius(for: deviceVersion)
+    }
+
+    static private func screenCornerRadius(for version: Version) -> CGFloat {
+        switch version {
 
         // Eski köşeli ekranlar (Home button'lu)
         case .iPhoneOriginal, .iPhone3G, .iPhone3GS, .iPhone4, .iPhone4S,
@@ -402,15 +417,9 @@ open class CheckDevice {
              .iPadPro13_0Inch, .iPadPro13_0Inch8thGen:
             return 18.0
 
-        // Simulator
+        // Simulator fallback (SIMULATOR_MODEL_IDENTIFIER bulunamadıysa)
         case .simulator:
-            if #available(iOS 13.0, *) {
-                let bottomInset = UIApplication.shared.connectedScenes
-                    .compactMap { $0 as? UIWindowScene }
-                    .first?.windows.first?.safeAreaInsets.bottom ?? 0
-                return bottomInset > 0 ? 55.0 : 0
-            }
-            return 0
+            return 55.0
 
         default:
             return 55.0  // Bilinmeyen yeni cihazlar
