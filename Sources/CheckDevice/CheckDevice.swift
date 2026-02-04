@@ -65,7 +65,7 @@ open class CheckDevice {
 			 //old version
 			case "iPhone1,1":                                       return .iPhoneOriginal
 			case "iPhone1,2":                                       return .iPhone3G
-            case "iPhone2,1":                                       return .iPhone3G
+            case "iPhone2,1":                                       return .iPhone3GS
 			case "iPhone3,1", "iPhone3,2", "iPhone3,3":             return .iPhone4
 			case "iPhone4,1", "iPhone4,2", "iPhone4,3":             return .iPhone4S
 			case "iPhone5,1", "iPhone5,2":                          return .iPhone5
@@ -319,6 +319,99 @@ open class CheckDevice {
 
     static public var hasClassicDesign: Bool {
         return !hasFaceID
+    }
+
+    // MARK: - Display Corner Radius
+
+    /// Cihazın ekran köşe radius'unu döndürür (pts)
+    /// Apple resmi API sağlamıyor, cihaz modeline göre bilinen değerler kullanılıyor
+    ///
+    /// Değerler:
+    /// - Home button'lu cihazlar: 0 (köşeli ekran)
+    /// - iPhone X, Xs, Xs Max, 11 Pro, 11 Pro Max: 39.0
+    /// - iPhone Xr, 11: 41.5
+    /// - iPhone 12 mini, 13 mini: 44.0
+    /// - iPhone 12, 12 Pro, 13, 13 Pro, 14, 16e: 47.33
+    /// - iPhone 12 Pro Max, 13 Pro Max, 14 Plus: 53.33
+    /// - iPhone 14 Pro, 14 Pro Max, 15, 15 Plus, 15 Pro, 15 Pro Max, 16, 16 Plus: 55.0
+    /// - iPhone 16 Pro, 16 Pro Max, 17, 17 Pro, 17 Pro Max, Air: 62.0
+    /// - iPad Air / iPad Pro 11" / 12.9": 18.0
+    static public var screenCornerRadius: CGFloat {
+        switch version() {
+
+        // Eski köşeli ekranlar (Home button'lu)
+        case .iPhoneOriginal, .iPhone3G, .iPhone4, .iPhone4S,
+             .iPhone5, .iPhone5C, .iPhone5S, .iPhoneSE,
+             .iPhone6, .iPhone6Plus, .iPhone6S, .iPhone6SPlus,
+             .iPhone7, .iPhone7Plus, .iPhone8, .iPhone8Plus,
+             .iPhoneSE2, .iPhoneSE3:
+            return 0
+
+        // iPhone X, Xs, Xs Max, 11 Pro, 11 Pro Max → 39.0
+        case .iPhoneX, .iPhoneXS, .iPhoneXS_Max,
+             .iPhone11Pro, .iPhone11Pro_Max:
+            return 39.0
+
+        // iPhone Xr, 11 → 41.5
+        case .iPhoneXR, .iPhone11:
+            return 41.5
+
+        // iPhone 12 mini, 13 mini → 44.0
+        case .iPhone12Mini, .iPhone13Mini:
+            return 44.0
+
+        // iPhone 12, 12 Pro, 13, 13 Pro, 14, 16e → 47.33
+        case .iPhone12, .iPhone12Pro,
+             .iPhone13, .iPhone13Pro,
+             .iPhone14, .iPhone16e:
+            return 47.33
+
+        // iPhone 12 Pro Max, 13 Pro Max, 14 Plus → 53.33
+        case .iPhone12ProMax, .iPhone13ProMax, .iPhone14Plus:
+            return 53.33
+
+        // iPhone 14 Pro, 14 Pro Max, 15, 15 Plus, 15 Pro, 15 Pro Max, 16, 16 Plus → 55.0
+        case .iPhone14Pro, .iPhone14ProMax,
+             .iPhone15, .iPhone15Plus, .iPhone15Pro, .iPhone15ProMax,
+             .iPhone16, .iPhone16Plus:
+            return 55.0
+
+        // iPhone 16 Pro, 16 Pro Max, 17, 17 Pro, 17 Pro Max, Air → 62.0
+        case .iPhone16Pro, .iPhone16ProMax,
+             .iPhone17, .iPhone17Pro, .iPhone17ProMax,
+             .iPhoneAir:
+            return 62.0
+
+        // iPod'lar → 0 (köşeli ekran)
+        case .iPodTouch1Gen, .iPodTouch2Gen, .iPodTouch3Gen,
+             .iPodTouch4Gen, .iPodTouch5Gen, .iPodTouch6Gen, .iPodTouch7Gen:
+            return 0
+
+        // iPad'ler → 18.0
+        case .iPad1, .iPad2, .iPad3, .iPad4, .iPad5, .iPad6, .iPad7, .iPad8, .iPad9, .iPad10, .iPad11,
+             .iPadAir, .iPadAir2, .iPadAir3, .iPadAir4, .iPadAir5,
+             .iPadAir6_11Inch, .iPadAir6_13Inch,
+             .iPadAirM3_11Inch_WiFi, .iPadAirM3_11Inch_Cellular,
+             .iPadAirM3_13Inch_WiFi, .iPadAirM3_13Inch_Cellular,
+             .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadMini5, .iPadMini6, .iPadMini7,
+             .iPadPro9_7Inch, .iPadPro10_5Inch,
+             .iPadPro11_0Inch, .iPadPro11_0Inch2, .iPadPro11_0Inch3, .iPadPro11_0Inch4, .iPadPro11_0Inch5,
+             .iPadPro11_0Inch5thGen, .iPadPro11_0Inch8thGen,
+             .iPadPro12_9Inch, .iPadPro12_9Inch2, .iPadPro12_9Inch3, .iPadPro12_9Inch4,
+             .iPadPro12_9Inch5, .iPadPro12_9Inch6, .iPadPro12_9Inch7thGen,
+             .iPadPro13_0Inch, .iPadPro13_0Inch8thGen:
+            return 18.0
+
+        // Simulator
+        case .simulator:
+            let bottomInset = UIApplication.shared.connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .first?.windows.first?.safeAreaInsets.bottom ?? 0
+            return bottomInset > 0 ? 55.0 : 0
+
+        default:
+            return 55.0  // Bilinmeyen yeni cihazlar
+        }
     }
 
     static public func size() -> Size {
