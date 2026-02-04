@@ -65,7 +65,7 @@ open class CheckDevice {
 			 //old version
 			case "iPhone1,1":                                       return .iPhoneOriginal
 			case "iPhone1,2":                                       return .iPhone3G
-            case "iPhone2,1":                                       return .iPhone3GS
+            case "iPhone2,1":                                       return .iPhone3G
 			case "iPhone3,1", "iPhone3,2", "iPhone3,3":             return .iPhone4
 			case "iPhone4,1", "iPhone4,2", "iPhone4,3":             return .iPhone4S
 			case "iPhone5,1", "iPhone5,2":                          return .iPhone5
@@ -404,10 +404,13 @@ open class CheckDevice {
 
         // Simulator
         case .simulator:
-            let bottomInset = UIApplication.shared.connectedScenes
-                .compactMap { $0 as? UIWindowScene }
-                .first?.windows.first?.safeAreaInsets.bottom ?? 0
-            return bottomInset > 0 ? 55.0 : 0
+            if #available(iOS 13.0, *) {
+                let bottomInset = UIApplication.shared.connectedScenes
+                    .compactMap { $0 as? UIWindowScene }
+                    .first?.windows.first?.safeAreaInsets.bottom ?? 0
+                return bottomInset > 0 ? 55.0 : 0
+            }
+            return 0
 
         default:
             return 55.0  // Bilinmeyen yeni cihazlar
