@@ -487,8 +487,10 @@ open class CheckDevice {
 				return .screen10_9Inch
 			case 1194, 1210:
                 return .screen11Inch
-            case 1366, 1376:
-                return .screen13Inch
+            case 1366:
+                return .screen12_9Inch  // 12.9" iPad Pro
+            case 1376:
+                return .screen13Inch    // 13" iPad Pro (M4/M5)
 			default:
 				return .unknownSize
 		}
