@@ -427,8 +427,13 @@ open class CheckDevice {
     }
 
     static public func size() -> Size {
-        let w: Double = Double(UIScreen.main.bounds.width)
-        let h: Double = Double(UIScreen.main.bounds.height)
+        // iOS 26+ fix: Use nativeBounds for physical screen size
+        // UIScreen.main.bounds returns window size on iOS 26 (resizable windows)
+        // UIScreen.main.nativeBounds always returns physical display size
+        let native = UIScreen.main.nativeBounds
+        let scale = UIScreen.main.scale
+        let w: Double = Double(native.width / scale)
+        let h: Double = Double(native.height / scale)
         let screenHeight: Double = max(w, h)
 
         switch screenHeight {
