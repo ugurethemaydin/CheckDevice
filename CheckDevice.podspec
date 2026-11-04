@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CheckDevice'
-  s.version          = '2.0.7'
+  s.version          = '2.0.8'
   s.summary          = 'Detect Apple device models, screen sizes, and capabilities.'
 
   s.description      = <<-DESC
@@ -24,7 +24,8 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.3'
   s.swift_version = '4.2'
-  s.source_files = 'Sources/CheckDevice/**/*'
+  s.source_files = 'Sources/CheckDevice/**/*.swift'
+  s.resource_bundles = { 'CheckDevice_Privacy' => ['Sources/CheckDevice/PrivacyInfo.xcprivacy'] }
 
   s.frameworks = 'UIKit'
 end
